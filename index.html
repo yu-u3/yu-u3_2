@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>blenderの使い方-[基本操作]</title>
+
+  <style>
+    /* 基本全体のスタイル */
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f4f4f4;
+    }
+
+    /* 見出しのスタイル */
+    h1, h2 {
+      color: #333;
+    }
+
+    h1 {
+      border-bottom: 2px solid #888;
+      padding-bottom: 0.5rem;
+    }
+
+    /* セクションごとの箱（ステップ） */
+    .step {
+      background: white;
+      border-left: 5px solid #007ACC;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* 表のスタイル */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    /* 画像を綺麗に表示するクラス */
+    .img-responsive {
+      max-width: 100%;     /* 親要素に合わせて縮小可 */
+      height: auto;        /* アスペクト比を保ったまま */
+      display: block;
+      margin: 1rem 0;
+      border: 1px solid #ccc;  /* 枠線（オプション） */
+      border-radius: 8px;      /* 角を丸める（任意） */
+    }
+
+    .highlight {
+    background-color: #c8c8c8;  /* 明るい黄色 */
+    padding: 0 0.3em;           /* 文字の左右に少し余白 */
+    border-radius: 4px;         /* 少し角丸に */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>✅ blenderの使い方-[基本操作]</h1>
+
+  <div class="step">
+    <h2>📌 概要</h2>
+    <p>これを見れば最低限操作できるようになれる！というページなっています。</p>
+  </div>
+
+  <div class="step">
+    <h2>🔹 目次</h2>
+    <ol>
+      <li><a href="#section1">モードの切り替え</a></li>
+      <li><a href="#section2">頂点・辺・面 の選択・編集方法</a></li>
+      <li><a href="#section3">ループカット</a></li>
+    </ol>
+  </div>
+
+  <!-- モードの切り替え -->
+  <div class="step">
+    <h2 id="section1">1, モードの切り替え</h2>
+    <p>
+        モードの切り替えをする場合はキーボードの<span class="highlight">&lt;Tab&gt;</span>を押すか、<br>
+        下の画像のように画面左上にある■のマークを押すことで切り替えることができる。
+    </p>
+    <img src="pic/mode.png" alt="説明文" class="img-responsive">
+    <img src="pic/mode2.png" alt="説明文" class="img-responsive">
+  </div>
+
+  <!-- 頂点・辺・面 の選択・編集方法 -->
+  <div class="step">
+    <h2 id="section2">2, 頂点・辺・面 の選択・編集方法</h2>
+    <hr>
+    <h3>選択方法</h3>
+    <p>
+        モードを「編集モード」にして、キーボードの上部数字キーの<span class="highlight">&lt;1&gt;</span> <span class="highlight">&lt;2&gt;</span> <span class="highlight">&lt;3&gt;</span>を押すか、<br>
+        下の画像マークを押すことで、左から 頂点・辺・面 で選択する物を切り替えることができる。後は簡単、自分が選択したい 頂点・辺・面を直感的にクリックするだけ。
+    </p>
+    <img src="pic/click.png" alt="説明文" class="img-responsive">
+    <br>
+    <hr>
+    <h3>編集方法</h3>
+    <p>
+      先ほどの方法で頂点を選択し、キーボードで以下のキーを押した後に、マウスカーソルを任意の方向に動かすで編集ができます。
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>編集内容</th>
+          <th>入力キー</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>移動</td>
+          <td><span class="highlight">&lt;G&gt;</span></td>
+        </tr>
+        <tr>
+          <td>新たに頂点を作成し移動</td>
+          <td><span class="highlight">&lt;E&gt;</span></td>
+        </tr>
+        <tr>
+          <td>拡大</td>
+          <td><span class="highlight">&lt;S&gt;</span></td>
+        </tr>
+        <tr>
+          <td>回転</td>
+          <td><span class="highlight">&lt;R&gt;</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      移動などの編集を行う時にキーボードの<span class="highlight">&lt;X&gt;</span>/<span class="highlight">&lt;Y&gt;</span>/<span class="highlight">&lt;Z&gt;</span>
+      を押すことで、X軸 / Y軸 / Z軸 で固定して編集することができます。
+    </p>
+    <img src="pic/tyouten1.png" width="950" alt="XYZ軸" class="img-responsive">
+    <hr>
+  </div>
+
+  <!-- ループカット -->
+  <div class="step">
+    <h2 id="section3">3, ループカット</h2>
+    <p>
+      「ループカット」という、特定の辺を基準に任意の数の頂点を作成する機能です。<br>
+      ループカットの使い方は、キーボードの<span class="highlight">&lt;Ctrl&gt;</span>+<span class="highlight">&lt;R&gt;</span>
+      を押すか、画面左下にあるループカットボタンを押し、マウスカーソルで頂点を作成したい辺を選択することで作成できます。
+    </p>
+    <img src="pic/loopcut1.png" alt="ループカット1" class="img-responsive">
+    <img src="pic/loopcut2.png" width="950" alt="ループカット2" class="img-responsive">
+    <p>
+      左上の分割数の数字を変えることで、辺の上に作る頂点の数を変えることができます。
+    </p>
+    <img src="pic/loopcut3.png" alt="" class="img-responsive">
+  </div>
+
+</body>
+</html>
